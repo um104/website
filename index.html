@@ -26,7 +26,7 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Let’s build a better government, together.</h1>
-            <p class="subtitle">Hi, I'm Mark. I'm a digital service leader, engineer, and community builder. For over ten years, I’ve worked across city, state, and federal government to help teams adopt modern ways of working, build smart tools, and deliver great public services that actually work for people. I've worked as an engineer at Google launching global products, a public interest technologist advising Congress on modernization, a research fellow closing the government's executive tech talent gap at Harvard, and a community builder bringing technology leaders together.</p>
+            <p class="subtitle">Hi, I'm Mark. I'm a digital service leader, engineer, and community builder. For over ten years, I’ve worked across city, state, and federal government to help teams adopt modern ways of working, build smart tools, and deliver great public services that actually work for people.</p>
             <p class="tagline"><strong>Software engineer by education, service designer by osmosis, coalition builder by nature.</strong></p>
         </div>
         <div class="hero-image">
@@ -36,29 +36,52 @@
     </section>
 
     <!-- Background Section -->
-    <section id="about" class="background-banner">
-        <div class="container">
-            <p></p>
+    <section id="about" class="split-section bg-light">
+        <div class="container split-layout">
+            <div class="spilt-text">
+                <h2>The Journey</h2>
+                <p>I've worked as an engineer at Google launching global products, a public interest technologist advising Congress on modernization, a research fellow closing the government's executive tech talent gap at Harvard, and a community builder bringing technology leaders together.</p>
+            </div>
+            <div class="split-image">
+                <!-- Add primary photo here -->
+                <img src="placeholder-about.jpg" alt="Mark working with a team">
+            </div>
         </div>
     </section>
 
     <!-- Logos Section -->
     <section class="logos-section">
-        <div class="container">
-            <h2>Orgs I’ve impacted</h2>
-            <div class="logo-grid">
-                <!-- Replace these with logos -->
-                <div class="logo-placeholder">Logo 1</div>
-                <div class="logo-placeholder">Logo 2</div>
-                <div class="logo-placeholder">Logo 3</div>
-                <div class="logo-placeholder">Logo 4</div>
-                <div class="logo-placeholder">Logo 5</div>
-                <div class="logo-placeholder">Logo 6</div>
-                <div class="logo-placeholder">Logo 7</div>
-                <div class="logo-placeholder">Logo 8</div>
-                <div class="logo-placeholder">Logo 9</div>
-                <div class="logo-placeholder">Logo 10</div>
-                <div class="logo-placeholder">Logo 11</div>
+        <div class="container-fluid">
+            <h2 class="text-center">Orgs I’ve impacted</h2>
+            <!-- The carousel track contains TWO identical sets of logos to create an infinite scroll effect -->
+            <div class="logo-carousel">
+                <div class="logo-track">
+                    <!-- First Set of 11 Logos -->
+                    <div class="logo-item">Logo 1</div>
+                    <div class="logo-item">Logo 2</div>
+                    <div class="logo-item">Logo 3</div>
+                    <div class="logo-item">Logo 4</div>
+                    <div class="logo-item">Logo 5</div>
+                    <div class="logo-item">Logo 6</div>
+                    <div class="logo-item">Logo 7</div>
+                    <div class="logo-item">Logo 8</div>
+                    <div class="logo-item">Logo 9</div>
+                    <div class="logo-item">Logo 10</div>
+                    <div class="logo-item">Logo 11</div>
+                    
+                    <!-- Second Set (Duplicate) for seamless looping -->
+                    <div class="logo-item">Logo 1</div>
+                    <div class="logo-item">Logo 2</div>
+                    <div class="logo-item">Logo 3</div>
+                    <div class="logo-item">Logo 4</div>
+                    <div class="logo-item">Logo 5</div>
+                    <div class="logo-item">Logo 6</div>
+                    <div class="logo-item">Logo 7</div>
+                    <div class="logo-item">Logo 8</div>
+                    <div class="logo-item">Logo 9</div>
+                    <div class="logo-item">Logo 10</div>
+                    <div class="logo-item">Logo 11</div>
+                </div>
             </div>
         </div>
     </section>
@@ -89,26 +112,31 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="cards-section">
-        <div class="container">
-            <h2>How we can work together</h2>
-            <div class="grid-container">
-                <div class="card outline-card">
-                    <h3>Fixing Broken Services</h3>
-                    <p>If a critical process or software project isn't working right, I’ll drop in to figure out exactly what’s broken. I talk to the people using it, look at the technical backend, and give you a clear roadmap to turn things around.</p>
+    <section id="services" class="split-section">
+        <div class="container split-layout reverse">
+            <div class="split-text">
+                <h2>How we can work together</h2>
+                <div class="service-list">
+                    <div class="service-item">
+                        <h3>Fixing Broken Services</h3>
+                        <p>If a critical process or software project isn't working right, I’ll drop in to figure out exactly what’s broken. I talk to the people using it, look at the technical backend, and give you a clear roadmap to turn things around.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Team Retreats & Strategy Workshops</h3>
+                        <p>I design and host immersive, interactive, small-group sessions to help your leadership team align on goals, fix internal friction, and build a forward-leaning workspace.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Designing Community Programs</h3>
+                        <p>If you want to build or improve a professional network, a fellowship, or a mentorship setup, I can help. I build the community structures, automate the behind-the-scenes software, and set up peer support.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Part-time Advising & Consulting</h3>
+                        <p>Sometimes you just need an experienced technologist on your side for a few hours a week. I provide independent strategic advice and technical reviews without the overhead of a full-time hire.</p>
+                    </div>
                 </div>
-                <div class="card outline-card">
-                    <h3>Team Retreats & Strategy Workshops</h3>
-                    <p>I design and host immersive, interactive, small-group sessions to help your leadership team align on goals, fix internal friction, and build a forward-leaning workspace.</p>
-                </div>
-                <div class="card outline-card">
-                    <h3>Designing Community Programs</h3>
-                    <p>If you want to build or improve a professional network, a fellowship, or a mentorship setup, I can help. I build the community structures, automate the behind-the-scenes software, and set up peer support.</p>
-                </div>
-                <div class="card outline-card">
-                    <h3>Part-time Advising & Consulting</h3>
-                    <p>Sometimes you just need an experienced technologist on your side for a few hours a week. I provide independent strategic advice and technical reviews without the overhead of a full-time hire.</p>
-                </div>
+            </div>
+            <div class="split-image">
+                <img src="placeholder-services.jpg" alt="Mark facilitating a workshop">
             </div>
         </div>
     </section>
@@ -146,21 +174,25 @@
             <div class="note-block">
                 <h3>Building Communities of Civic Technologists</h3>
                 <p>How I ran a 1,000+ person community of passionate practitioners, gathered hundreds of peers in convenings across the country, and built trusted spaces for cross-sector leaders to lean on each other.</p>
+                <!-- <a href="civic-tech-community.html" class="case-study-link">Read full case study &rarr;</a> -->
             </div>
 
             <div class="note-block">
                 <h3>Leading Technical Procurements</h3>
                 <p>A look at my roles in technical procurements across levels of government, from initiating a government’s first agile procurement to leading the technical review of over 100+ tech vendors on a $1.5B contract.</p>
+                <!-- <a href="technical-procurements.html" class="case-study-link">Read full case study &rarr;</a> -->
             </div>
 
             <div class="note-block">
                 <h3>Modern Government Research and Publications</h3>
                 <p>An overview of my published works pushing the field of public interest technology forward.</p>
+                <!-- <a href="government-research.html" class="case-study-link">Read full case study &rarr;</a> -->
             </div>
 
             <div class="note-block">
                 <h3>Building Impactful Public Services</h3>
                 <p>Where the rubber meets the road: hands-on building of critical public services.</p>
+                <!-- <a href="public-services.html" class="case-study-link">Read full case study &rarr;</a> -->
             </div>
         </div>
     </section>
@@ -169,8 +201,26 @@
     <section id="media" class="media-section bg-light">
         <div class="container">
             <h2>Media, Press, and Speaking Log</h2>
-            <!-- The JavaScript file will automatically populate this div based on data array -->
-            <ul id="media-list" class="media-list"></ul>
+            <ul class="media-list">
+                <li class="media-item">
+                    <span class="media-date">October 2026</span>
+                    <h3><a href="#">Keynote: The Future of Civic Tech</a></h3>
+                    <p>Delivered the opening remarks at the Annual Public Interest Technology Summit.</p>
+                </li>
+
+                <li class="media-item">
+                    <span class="media-date">July 2025</span>
+                    <h3><a href="#">Guest on 'GovTech Today' Podcast</a></h3>
+                    <p>Discussed strategies for closing the executive tech talent gap in federal agencies.</p>
+                </li>
+
+                <li class="media-item">
+                    <span class="media-date">March 2024</span>
+                    <h3><a href="#">Harvard Kennedy School Research Publication</a></h3>
+                    <p>Co-authored a paper on modern maturity models for state-level digital service teams.</p>
+                </li>
+
+            </ul>
         </div>
     </section>
 
