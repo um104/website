@@ -1,4 +1,27 @@
-/* Base Styles & Reset */
+/* ==========================================================================
+   CSS Variables - Update these to change site colors globally
+   ========================================================================== */
+:root {
+    /* Brand Colors */
+    --dominant-color: #ffffff;
+    --primary-color: #2b6cb0;
+    --accent-1: #ebf8ff;
+    --accent-2: #e2e8f0;
+    
+    /* Text Colors */
+    --text-main: #333333;
+    --text-muted: #4a5568;
+    --text-light: #718096;
+    
+    /* Backgrounds */
+    --bg-light: #f7fafc;
+    --bg-dark: #1a202c;
+    --bg-dark-text: #f7fafc;
+}
+
+/* ==========================================================================
+   Base Styles & Reset
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -8,13 +31,18 @@
 
 body {
     line-height: 1.6;
-    color: #333;
-    background-color: #ffffff;
+    color: var(--text-main);
+    background-color: var(--dominant-color);
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
+}
+
+.container-fluid {
+    width: 100%;
     padding: 0 20px;
 }
 
@@ -24,16 +52,21 @@ section {
 
 h1, h2, h3, h4 {
     margin-bottom: 20px;
-    color: #1a202c;
+    color: var(--text-main);
 }
 
-.bg-light { background-color: #f7fafc; }
-.bg-dark { background-color: #1a202c; color: #f7fafc; }
-.bg-dark h2, .bg-dark h4 { color: #f7fafc; }
+.text-center { text-align: center; }
 
-/* Navigation */
+/* Background Helpers */
+.bg-light { background-color: var(--bg-light); }
+.bg-dark { background-color: var(--bg-dark); color: var(--bg-dark-text); }
+.bg-dark h2, .bg-dark h4 { color: var(--bg-dark-text); }
+
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
 .navbar {
-    background-color: #ffffff;
+    background-color: var(--dominant-color);
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     position: sticky;
     top: 0;
@@ -53,7 +86,7 @@ h1, h2, h3, h4 {
     font-size: 1.5rem;
     font-weight: bold;
     text-decoration: none;
-    color: #2b6cb0;
+    color: var(--primary-color);
 }
 
 .nav-links {
@@ -64,67 +97,79 @@ h1, h2, h3, h4 {
 
 .nav-links a {
     text-decoration: none;
-    color: #4a5568;
+    color: var(--text-muted);
     font-weight: 500;
 }
 
 .nav-links a:hover {
-    color: #2b6cb0;
+    color: var(--primary-color);
 }
 
-/* Hero Section */
-.hero {
+/* ==========================================================================
+   Hero & Split Layouts (Alternating text/image)
+   ========================================================================== */
+.hero, .split-layout {
     display: flex;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 80px 20px;
-    gap: 40px;
+    gap: 60px;
 }
 
-.hero-content {
+.hero { padding: 80px 20px; }
+
+.split-layout.reverse {
+    flex-direction: row-reverse;
+}
+
+.hero-content, .split-text {
     flex: 1;
 }
 
 .hero h1 {
     font-size: 3rem;
     line-height: 1.2;
-    color: #2b6cb0;
+    color: var(--primary-color);
 }
 
-.hero .subtitle {
+.hero .subtitle, .split-text p {
     font-size: 1.25rem;
     margin-bottom: 20px;
-    color: #4a5568;
+    color: var(--text-muted);
 }
 
 .hero .tagline {
     font-size: 1.1rem;
-    color: #2d3748;
+    color: var(--text-main);
 }
 
-.hero-image {
+.hero-image, .split-image {
     flex: 1;
     display: flex;
     justify-content: center;
 }
 
-.hero-image img {
-    max-width: 100%;
+.hero-image img, .split-image img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
     border-radius: 8px;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
 }
 
-/* Banner */
-.background-banner {
-    background-color: #ebf8ff;
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: #2b6cb0;
+/* ==========================================================================
+   Service List (Inside Split Layout)
+   ========================================================================== */
+.service-list .service-item {
+    margin-bottom: 30px;
 }
+.service-list h3 { margin-bottom: 10px; }
+.service-list p { font-size: 1rem; margin-bottom: 0; }
 
-/* Grids & Cards */
+/* ==========================================================================
+   Grids & Cards
+   ========================================================================== */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -132,34 +177,15 @@ h1, h2, h3, h4 {
 }
 
 .card {
-    background: #ffffff;
+    background: var(--dominant-color);
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
-.outline-card {
-    box-shadow: none;
-    border: 1px solid #e2e8f0;
-}
-
-/* Logos */
-.logo-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-    text-align: center;
-}
-
-.logo-placeholder {
-    background-color: #edf2f7;
-    padding: 40px 20px;
-    border-radius: 8px;
-    color: #a0aec0;
-    font-weight: bold;
-}
-
-/* Approach Grid */
+/* ==========================================================================
+   Approach Grid
+   ========================================================================== */
 .approach-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -167,17 +193,19 @@ h1, h2, h3, h4 {
 }
 
 .approach-item h4 {
-    border-bottom: 2px solid #2b6cb0;
+    border-bottom: 2px solid var(--primary-color);
     padding-bottom: 10px;
     display: inline-block;
     text-transform: lowercase;
 }
 
-/* Field Notes */
+/* ==========================================================================
+   Field Notes & Media Log
+   ========================================================================== */
 .note-block {
     margin-bottom: 40px;
     padding-bottom: 40px;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid var(--accent-2);
 }
 
 .note-block:last-child {
@@ -186,34 +214,42 @@ h1, h2, h3, h4 {
 
 .editor-note {
     margin-top: 10px;
-    color: #718096;
+    color: var(--text-light);
     font-size: 0.9rem;
 }
 
-/* Media List */
-.media-list {
-    list-style: none;
+.case-study-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
 }
+.case-study-link:hover { text-decoration: underline; }
+
+.media-list { list-style: none; }
 
 .media-item {
     padding: 20px 0;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid var(--accent-2);
 }
 
-.media-item:last-child {
-    border-bottom: none;
-}
+.media-item:last-child { border-bottom: none; }
+.media-item h3 a { color: inherit; text-decoration: none; }
+.media-item h3 a:hover { color: var(--primary-color); }
 
 .media-date {
     font-size: 0.875rem;
-    color: #718096;
+    color: var(--text-light);
     margin-bottom: 5px;
     display: block;
 }
 
-/* Footer */
+/* ==========================================================================
+   Buttons & Footer
+   ========================================================================== */
 footer {
-    background-color: #2b6cb0;
+    background-color: var(--primary-color);
     color: white;
     text-align: center;
     padding: 60px 0;
@@ -224,7 +260,7 @@ footer h2 { color: white; }
 .btn {
     display: inline-block;
     background-color: white;
-    color: #2b6cb0;
+    color: var(--primary-color);
     padding: 12px 24px;
     text-decoration: none;
     border-radius: 4px;
@@ -233,11 +269,76 @@ footer h2 { color: white; }
     transition: background-color 0.2s;
 }
 
-.btn:hover { background-color: #ebf8ff; }
+.btn:hover { background-color: var(--accent-1); }
+.copyright { color: rgba(255, 255, 255, 0.8); font-size: 0.9rem; margin-top: 20px; }
 
-/* Responsive adjustments */
+/* ==========================================================================
+   CSS Infinite Scrolling Logo Carousel
+   ========================================================================== */
+.logo-carousel {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    padding: 40px 0;
+    width: 100%;
+}
+
+/* Apply gradient fade to edges for a smoother look (Optional) */
+.logo-carousel::before,
+.logo-carousel::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+}
+.logo-carousel::before {
+    left: 0;
+    background: linear-gradient(to right, var(--dominant-color) 0%, transparent 100%);
+}
+.logo-carousel::after {
+    right: 0;
+    background: linear-gradient(to left, var(--dominant-color) 0%, transparent 100%);
+}
+
+.logo-track {
+    display: inline-flex;
+    gap: 40px; /* Space between logos */
+    animation: scroll-left 30s linear infinite;
+}
+
+.logo-item {
+    background-color: var(--accent-1);
+    padding: 30px 40px;
+    border-radius: 8px;
+    color: var(--text-muted);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 150px;
+}
+
+/* Pause scroll on hover */
+.logo-carousel:hover .logo-track {
+    animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+    0% { transform: translateX(0); }
+    /* Moves exactly half the width of the track (which is 1 set of the 11 logos) */
+    100% { transform: translateX(calc(-50% - 20px)); } 
+}
+
+/* ==========================================================================
+   Responsive Adjustments
+   ========================================================================== */
 @media (max-width: 768px) {
-    .hero { flex-direction: column; text-align: center; }
+    .hero, .split-layout, .split-layout.reverse { 
+        flex-direction: column; 
+        text-align: center; 
+    }
     .approach-grid { grid-template-columns: 1fr; }
-    .nav-links { display: none; /* Can add a hamburger menu later */ }
+    .nav-links { display: none; }
 }
