@@ -320,6 +320,13 @@ footer h2 { color: white; }
     min-width: 150px;
 }
 
+.logo-item img {
+    max-width: 120px; /* Limits the width of the logos */
+    max-height: 80px; /* Limits the height of the logos */
+    object-fit: contain; /* Ensures the logo isn't stretched or squished */
+    display: block;
+}
+
 /* Pause scroll on hover */
 .logo-carousel:hover .logo-track {
     animation-play-state: paused;
